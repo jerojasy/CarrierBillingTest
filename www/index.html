@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/administracion.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/dataTables.foundation.css">
+    <link rel="stylesheet" type="text/css" href="./css/dataTables.tableTools.min.css">
+
+</head>
+<body>
+    <div class="reveal-modal-bg" style="display: block;"></div><div class="reveal-modal open" id="Modal" data-reveal="" style="display: block; opacity: 1; visibility: visible; top: 100px;">
+        <div class="content">
+            <form id="form-modal" name="create-user" action="http://10.46.0.250:13016/actualizar_proveedor/" method="POST">
+                <input type="hidden" name="csrfmiddlewaretoken" value="iKPhFwI31EeIEkPzu5LE24wVfHJdWOM4QtBQR9jnZDthNURRvvWXLWp91RZM3pjm">
+                <div class="row">
+                    <h4>Editar Proveedor</h4>
+                </div>
+                <div class="row">
+                                <div class="large-10 large-offset-1 medium-12 columns">
+                                    <fieldset><legend>Datos Proveedor</legend>
+                                    <div class="row">
+                                        <div class="large-4 medium-4 columns">
+                                            <label>*Nombre
+                                                <input id="first_name" name="first_name" type="text" class="radius" placeholder="Nombre proveedor" value="Google" required="">
+                                            </label>
+                                        </div>
+                                        <div class="large-4 medium-4 columns">
+                                            <label>*Nombre de usuario
+                                                <input id="username" name="username" type="text" class="radius" placeholder="Nuevo proveedor" value="GoogleBan" required="">
+                                            </label>
+                                        </div>
+                                        <div class="large-4 medium-4 columns">
+                                            <label>*Contraseña
+                                                <input id="password" name="password" type="password" class="radius" placeholder="Contraseña" value="YP]Xkyw}@m~7I;bSPIC+" required="">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="large-4 medium-4 columns">
+                                            <label>*Codigo
+                                                <input id="codigo" name="codigo" type="text" class="radius" placeholder="Codigo" value="302" required="">
+                                            </label>
+                                        </div>
+                                        <div class="large-4 medium-4 columns end">
+                                            <label>*Codigo Cargo
+                                                <input id="codigo_cargo" name="codigo_cargo" type="text" class="radius" placeholder="Codigo Cargo nuevo proveedor" value="OM_FCA_GOOG" required="">
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                        <div class="large-4 medium-4 columns">
+                                        </div>
+                                    </div>
+                                    <fieldset><legend>Carga FTP</legend>
+                                    <div class="row " id="ftp-charge-edit">
+                                        <div class="large-3 medium-3">
+                                            <input type="checkbox" class="custom-control-input" id="cargasftp" name="cargasftp" checked="checked" onclick="cargaMsg(this.checked);">
+                                            <label class="custom-control-label" for="cargasftp">Carga SFTP</label>
+                                        </div>
+                                        <div class="large-3 medium-3 columns">
+                                            <label>*Host SFTP
+                                                <input id="hostsftp" name="hostsftp" type="text" class="radius" placeholder="Host SFTP" value="10.46.0.160" required="">
+                                            </label>
+                                        </div>
+                                        <div class="large-3 medium-3 columns">
+                                            <label>*Contraseña SFTP
+                                                <input id="passsftp" name="passsftp" type="password" class="radius" placeholder="Contraseña SFTP" value="uskwp1ft" required="">
+                                            </label>
+                                        </div>
+                                        <div class="large-3 medium-3 columns">
+                                            <label>*Puerto SFTP
+                                                <input id="puertosftp" name="puertosftp" type="text" class="radius" placeholder="Puerto STFP" value="22" required="">
+                                            </label>
+                                        </div>
+                                        <div class="large-3 medium-3 columns">
+                                            <label>*Usuario SFTP
+                                                <input id="usersftp" name="usersftp" type="text" class="radius" placeholder="Usuario STFP" value="test2" required="">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset><legend>Habilitación Tipo Cliente</legend>
+                                <div class="row">
+                                    <div class="large-3 medium-3 columns">
+                                        <input type="checkbox" class="custom-control-input" id="tipoControl" name="tipoControl">
+                                        <label class="custom-control-label" for="tipoControl">Control</label>
+                                    </div>
+                                    <div class="large-3 medium-3 columns">
+                                        <input type="checkbox" class="custom-control-input" id="tipoHibrido" name="tipoHibrido">
+                                        <label class="custom-control-label" for="tipoHibrido">Hibrido</label>
+                                    </div>
+                                     <div class="large-3 medium-3 columns">
+                                        <input type="checkbox" class="custom-control-input" id="tipoPostpago" name="tipoPostpago" checked="checked">
+                                        <label style="margin: 0;" class="custom-control-label m0" for="tipoPostpago">Postpago</label>
+                                    </div>
+                                    <div class="large-3 medium-3 columns">
+                                        <input type="checkbox" class="custom-control-input" id="tipoPrepago" name="tipoPrepago">
+                                        <label style="margin: 0;" class="custom-control-label m0" for="tipoPrepago">Prepago</label>
+                                    </div>
+                                </div>
+                                </fieldset>
+                                <fieldset><legend>Lista Negra - Blanca - Límite de Crédito</legend>
+                                    <div class="row">
+                                        <div class="large-4 medium-4 columns">
+                                            <input type="checkbox" class="custom-control-input" id="listaBlancaPost" name="listaBlancaPost" checked="checked">
+                                            <label class="custom-control-label" for="listaBlancaPost">Lista Blanca</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="large-3 medium-3 columns">
+                                            <input type="checkbox" class="custom-control-input" id="listaNegra" name="listaNegra" checked="checked">
+                                            <label class="custom-control-label" for="listaNegra">Lista Negra</label>
+                                        </div>
+                                        <div class="large-3 medium-3 columns">
+                                            <input type="checkbox" class="custom-control-input" id="cobranza" name="cobranza" checked="checked">
+                                            <label class="custom-control-label" for="cobranza">Cobranza</label>
+                                        </div>
+                                         <div class="large-3 medium-3 columns end">
+                                            <input type="checkbox" class="custom-control-input" id="limitecredito" name="limitecredito" checked="checked">
+                                            <label style="margin: 0;" class="custom-control-label m0" for="limitecredito">Limite Credito Postpago</label>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                       
+                                        <div class="large-3 medium-4 columns">
+                                            <input type="checkbox" class="custom-control-input" id="limitecreditoPrepago" name="limitecreditoprepago" checked="checked">
+                                            <label style="margin: 0;" class="custom-control-label m0" for="limitecreditoPrepago">Limite Credito Prepago</label>
+                                        </div>
+                                        <div class="large-3 medium-4 columns left  " id="monto-container">
+                                            <div class="row collapse prefix-radius">
+                                                <div class="small-3 columns">
+                                                    <span class="prefix">Monto</span>
+                                                </div>
+                                                <div class="small-9 columns">
+                                                    <input type="number" id="montoPrepago" name="montolimiteprepago" value="1500">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                    <fieldset><legend>Configuración SMS</legend>
+                                            <dl class="sub-nav">
+                                                <dd class="active"><a href="#">Postpago</a></dd>
+                                                <dd><a href="#">Control</a></dd>
+                                                <dd><a href="#">Hibrido</a></dd>
+                                                <dd class="hide-for-small-only"><a href="#">Prepago</a></dd>
+                                            </dl>
+                                            <div class="row">
+                                                <div class="medium-3 columns">
+                                                    <input type="checkbox" class="custom-control-input" id="envioSms" name="envioSms">
+                                                    <label class="custom-control-label" for="envioSms">Envio SMS</label>
+
+                                                    <div class="large-10">
+                                                        <label>SMS sin Saldo
+                                                            <textarea placeholder="Estimado: $msisdn su 
+                                                            saldo $Saldo es 
+                                                            insuficiente."></textarea>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="medium-3 columns">
+                                                    <input type="checkbox" class="custom-control-input" id="envioSms" name="envioSms">
+                                                    <label class="custom-control-label" for="envioSms">Envio SMS</label>
+
+                                                    <div class="large-10">
+                                                        <label>SMS Límite de Crédito
+                                                            <textarea placeholder="Estimado: $msisdn
+                                                            no posee crédito."></textarea>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="medium-3 columns">
+                                                    <input type="checkbox" class="custom-control-input" id="envioSms" name="envioSms">
+                                                    <label class="custom-control-label" for="envioSms">Envio SMS</label>
+
+                                                    <div class="large-10">
+                                                        <label>SMS Compra Exitosa
+                                                            <textarea placeholder="Estimado: $msisdn
+                                                            su compra fue exitosa."></textarea>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="medium-3 columns end">
+                                                    <input type="checkbox" class="custom-control-input" id="envioSms" name="envioSms">
+                                                    <label class="custom-control-label" for="envioSms">Envio SMS</label>
+
+                                                    <div class="large-10">
+                                                        <label>SMS Error en Transacción
+                                                            <textarea class="" placeholder="Estimado: $msisdn
+                                                            error en transacción."></textarea>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </fieldset>
+                            </div>
+                <input name="prov_id" type="hidden" value="1">
+                <input name="prov_enabled" type="hidden" value="True">
+                <div class="row">
+                  <div class="large-5 medium-5 small-6 text-center column">
+                    <button class="expand primary radius left" id="providerEdit">Actualizar</button>
+                  </div>
+                  <div class="large-5 medium-5 small-6 text-center column">
+                    <a onclick="$(&#39;#Modal&#39;).foundation(&#39;reveal&#39;, &#39;close&#39;)" class="secondary radius button expand right">Cerrar</a>
+                  </div>
+                </div>
+            </form>
+        </div>
+</body>
+</html>

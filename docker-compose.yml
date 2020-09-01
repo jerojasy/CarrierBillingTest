@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: ./compose/Dockerfile
+    ports:
+      - "8098:80"
+    volumes:
+      - ./www/:/www-data/
+    restart: always
