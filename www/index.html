@@ -144,12 +144,22 @@
                                     </div>
                                 </fieldset>
                                     <fieldset><legend>Configuración SMS</legend>
-                                            <dl class="sub-nav">
-                                                <dd class="active"><a href="#">Postpago</a></dd>
-                                                <dd><a href="#">Control</a></dd>
-                                                <dd><a href="#">Hibrido</a></dd>
-                                                <dd class="hide-for-small-only"><a href="#">Prepago</a></dd>
-                                            </dl>
+
+                                        <div class="icon-bar four-up" role="navigation" style="border-radius: 5px; background-color: green;">
+                                            <a class="item active" aria-labelledby="#itemlabel1" style="padding: 5px; border-radius: 5px;">
+                                              <label id='itemlabel1'>Postpago</label>
+                                            </a>
+                                            <a class="item" aria-labelledby="#itemlabel2"style="padding: 5px;">
+                                                <label id='itemlabel2'>Control</label>
+                                            </a>
+                                            <a class="item" aria-labelledby="#itemlabel3"style="padding: 5px;">
+                                              <label id='itemlabel3'>Híbrido</label>
+                                            </a>
+                                            <a class="item" aria-labelledby="#itemlabel4"style="padding: 5px;">
+                                              <label id='itemlabel4'>Prepago</label>
+                                            </a>
+                                          </div>
+
                                             <div class="row">
                                                 <div class="medium-3 columns">
                                                     <input type="checkbox" class="custom-control-input" id="envioSms" name="envioSms">
@@ -159,7 +169,12 @@
                                                         <label>SMS sin Saldo
                                                             <textarea placeholder="Estimado: $msisdn su 
                                                             saldo $Saldo es 
-                                                            insuficiente."></textarea>
+                                                            insuficiente." style="height: 100px;"></textarea>
+                                                        </label>
+                                                    </div>
+                                                    <div class="large-10 columns">
+                                                        <label>Cantidad SMS por día
+                                                            <input type="number" class="radius" placeholder="1">
                                                         </label>
                                                     </div>
                                                 </div>
@@ -171,7 +186,12 @@
                                                     <div class="large-10">
                                                         <label>SMS Límite de Crédito
                                                             <textarea placeholder="Estimado: $msisdn
-                                                            no posee crédito."></textarea>
+                                                            no posee crédito." style="height: 100px;"></textarea>
+                                                        </label>
+                                                    </div>
+                                                    <div class="large-10 columns">
+                                                        <label>Cantidad SMS por día
+                                                            <input type="number" class="radius" placeholder="1">
                                                         </label>
                                                     </div>
                                                 </div>
@@ -183,7 +203,12 @@
                                                     <div class="large-10">
                                                         <label>SMS Compra Exitosa
                                                             <textarea placeholder="Estimado: $msisdn
-                                                            su compra fue exitosa."></textarea>
+                                                            su compra fue exitosa." style="height: 100px;"></textarea>
+                                                        </label>
+                                                    </div>
+                                                    <div class="large-10 columns">
+                                                        <label>Cantidad SMS por día
+                                                            <input type="number" class="radius" placeholder="1">
                                                         </label>
                                                     </div>
                                                 </div>
@@ -195,7 +220,12 @@
                                                     <div class="large-10">
                                                         <label>SMS Error en Transacción
                                                             <textarea class="" placeholder="Estimado: $msisdn
-                                                            error en transacción."></textarea>
+                                                            error en transacción." style="height: 100px;"></textarea>
+                                                        </label>
+                                                    </div>
+                                                    <div class="large-10 columns">
+                                                        <label>Cantidad SMS por día
+                                                            <input type="number" class="radius" placeholder="1">
                                                         </label>
                                                     </div>
                                                 </div>
